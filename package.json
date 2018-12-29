@@ -1,0 +1,25 @@
+{
+  "name": "wetube",
+  "version": "1.0.0",
+  "description": "Youtube clone project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devyohan/wetube.git"
+  },
+  "keywords": [
+    "nodejs",
+    "webapp"
+  ],
+  "author": "Dev Yohan",
+  "bugs": {
+    "url": "https://github.com/devyohan/wetube/issues"
+  },
+  "homepage": "https://github.com/devyohan/wetube#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
