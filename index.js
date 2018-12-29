@@ -1,5 +1,6 @@
 'use strict';
 import express from 'express';
+import logger from 'morgan';
 const app = express();
 const PORT = 4000;
 
@@ -10,16 +11,12 @@ const handleListening = () =>
 
 const handlProfile = (req, res) => res.send("Profile!!");
 
-// middleware
-const betweenHome = (req, res, next) => {
-    console.log("Between");
-    next();
-};
+// tiny : GET / 304 - - 3.842 ms
+// app.use(logger('tiny'));
+// dev : GET / 304 4.104 ms - -
+app.use(logger('dev'));
 
-// middleware 를 모든 route 에 대해 실행할 수 있습니다.
-app.use(betweenHome);
-
-app.get('/', betweenHome, handlProfile);
+app.get('/', handlProfile);
 
 
 
