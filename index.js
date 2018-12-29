@@ -1,8 +1,25 @@
+'use strict';
 const express = require('express');
 const app = express();
+const PORT = 4000;
+
+function handleListening() {
+    console.log(`Listening on : http://localhost:${PORT}`);
+};
+
+// 지금까지는 response 로 늘 고정된 텍스트만 전송했지만, html, css 를 전송하도록 개선해나가도록 하겠습니다.
+
+function handleHome() {
+    console.log(`Hi HOME!!`);
+}
 
 app.get('/', function(req, res) {
     res.send('Helloworld!!!');
 });
 
-app.listen(4000);
+app.get('/asdf', function(req, res) {
+    console.log(req);
+    res.send("req");
+})
+
+app.listen(PORT, handleListening);
