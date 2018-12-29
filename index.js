@@ -10,10 +10,18 @@ const handleListening = () =>
 
 const handlProfile = (req, res) => res.send("Profile!!");
 
+// middleware
+const betweenHome = (req, res, next) => {
+    console.log("Between");
+    next();
+};
 
-app.get('/', function(req, res) {
-    res.send(handlProfile);
-});
+// middleware 를 모든 route 에 대해 실행할 수 있습니다.
+app.use(betweenHome);
+
+app.get('/', betweenHome, handlProfile);
+
+
 
 app.get('/asdf', function(req, res) {
     console.log(req);
