@@ -1,5 +1,11 @@
 export const home = (req, res) => res.render('home', { pageTitle: 'Home' });
-export const search = (req, res) => res.render('search', { pageTitle: 'Search' });
+export const search = (req, res) => {
+    // const searchingBy = req.query.term; // ES6 이전 코딩 방식
+    const {
+        query: { term: searchingBy }
+    } = req;
+    res.render('search', { pageTitle: 'Search', searchingBy });
+};
 export const videos = (req, res) => res.send('Search', { pageTitle: 'Search'} );
 export const upload = (req, res) => res.render('upload', { pageTitle: 'Upload' });
 export const videoDetail = (req, res) => res.render('videoDetail', { pageTitle: 'Video Detail'});
