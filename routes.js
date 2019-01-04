@@ -7,16 +7,16 @@ const SEARCH = '/search';
 
 // Users
 const USERS = '/users';
-const USER_DETAIL = '/:id'; // example: /users/1234
+const USER_DETAIL = '/detail/:id'; // example: /users/1234
 const EDIT_PROFILE = '/edit-profile/';
 const CHANGE_PASSWORD = '/change-password';
 
 // Videos
 const VIDEOS = '/videos';
 const UPLOAD = '/upload';
-const VIDEO_DETAIL = '/:id';
-const EDIT_VIDEO = '/:id/edit'; // example: /video/1/edit
-const DELETE_VIDEO = '/:id/delete';
+const VIDEO_DETAIL = '/detail/:id';
+const EDIT_VIDEO = '/video/:id/edit'; // example: /video/1/edit
+const DELETE_VIDEO = '/video/:id/delete';
 
 const routes = {
     home: HOME,
